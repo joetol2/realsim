@@ -22,9 +22,7 @@ const HeroSection = () => {
               Stealth Mode
             </p>
           </div>
-          <h1 className="animate-fade-up-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-semibold tracking-tight leading-[1.08] mb-8 text-foreground">
-            Building robots that work in the real&nbsp;world.
-          </h1>
+         
           <p className="animate-fade-up-delay-2 text-base sm:text-lg text-text-body leading-relaxed max-w-xl mx-auto">
             RealSim is focused on the gap between simulated training and
             real-world robot behavior. We're not ready to say more yet.
