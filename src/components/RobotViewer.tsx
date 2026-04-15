@@ -85,7 +85,7 @@ export default function RobotViewer() {
           Robot Model
         </p>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-semibold tracking-tight leading-[1.15] mb-10">
-          Meet Tycho.
+          Interactive 3D model.
         </h2>
       </div>
       <div style={{ width: "100%", height: "600px" }}>
