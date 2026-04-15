@@ -49,8 +49,11 @@ display_line = function(x, y, x2, y2, color,w) {
 }
 
 display_clear = function() {
-  g_context.beginPath();
-  g_context.fillStyle="#013575";
+  // Opposite diagonal to the site background (site: #016fb5 lower-left → #013575 upper-right)
+  var grad = g_context.createLinearGradient(0, HEIGHT, WIDTH, 0);
+  grad.addColorStop(0, "#013575"); // lower-left = dark
+  grad.addColorStop(1, "#016fb5"); // upper-right = medium blue
+  g_context.fillStyle = grad;
   g_context.fillRect(0, 0, WIDTH, HEIGHT);
 }
 
