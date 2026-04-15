@@ -88,33 +88,35 @@ export default function RobotViewer() {
           Interactive 3D model.
         </h2>
       </div>
-      <div style={{ width: "100%", height: "600px" }}>
-        <Canvas
-          camera={{
-            position: isMobile ? [15, 10, 15] : [12, 10, 12],
-            fov: isMobile ? 60 : 70,
-            up: [0, 1, 0],
-          }}
-          style={{ background: "rgb(10, 16, 30)" }}
-        >
-          <fog attach="fog" args={["#0a101e", 25, 50]} />
-          <Scene modelUrl={MODEL_URL} />
-          <OrbitControls
-            enableZoom={true}
-            zoomSpeed={0.5}
-            autoRotate={true}
-            autoRotateSpeed={0.5}
-            enablePan={false}
-            rotateSpeed={0.3}
-            minPolarAngle={Math.PI / 6}
-            maxPolarAngle={Math.PI / 1.8}
-            target={[0, 2.5, 0]}
-            minDistance={8}
-            maxDistance={20}
-            enableDamping={true}
-            dampingFactor={0.05}
-          />
-        </Canvas>
+      <div className="max-w-6xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div style={{ width: "100%", height: "600px" }}>
+          <Canvas
+            camera={{
+              position: isMobile ? [15, 10, 15] : [12, 10, 12],
+              fov: isMobile ? 60 : 70,
+              up: [0, 1, 0],
+            }}
+            style={{ background: "rgb(10, 16, 30)" }}
+          >
+            <fog attach="fog" args={["#0a101e", 25, 50]} />
+            <Scene modelUrl={MODEL_URL} />
+            <OrbitControls
+              enableZoom={true}
+              zoomSpeed={0.5}
+              autoRotate={true}
+              autoRotateSpeed={0.5}
+              enablePan={false}
+              rotateSpeed={0.3}
+              minPolarAngle={Math.PI / 6}
+              maxPolarAngle={Math.PI / 1.8}
+              target={[0, 2.5, 0]}
+              minDistance={8}
+              maxDistance={20}
+              enableDamping={true}
+              dampingFactor={0.05}
+            />
+          </Canvas>
+        </div>
       </div>
       <div className="max-w-6xl mx-auto px-8 sm:px-12 lg:px-20 mt-4">
         <p className="text-sm text-muted-foreground">
