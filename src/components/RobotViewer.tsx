@@ -88,6 +88,7 @@ export default function RobotViewer() {
           Interactive 3D model.
         </h2>
       </div>
+      <div className="max-w-6xl mx-auto px-8 sm:px-12 lg:px-20">
       <div style={{ width: "100%", height: "600px" }}>
         <Canvas
           camera={{
@@ -115,6 +116,7 @@ export default function RobotViewer() {
             dampingFactor={0.05}
           />
         </Canvas>
+      </div>
       </div>
       <div className="max-w-6xl mx-auto px-8 sm:px-12 lg:px-20 mt-4">
         <p className="text-sm text-muted-foreground">
