@@ -15,10 +15,10 @@ const Index = () => {
       <VideoShowcase />
       <PositioningSection />
       <SimulationSection />
-      <RobotViewer />
       <FocusCards />
       <StealthStatement />
       <ContactCTA />
+      <RobotViewer />
       <Footer />
     </main>
   );
