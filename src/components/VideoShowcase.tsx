@@ -3,19 +3,18 @@ import heroPoster from "@/assets/robot-learning.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const VideoShowcase = () => {
-  const { ref, isVisible } = useScrollReveal(0.25);
+  const { ref, isVisible } = useScrollReveal(0.95);
 
   return (
     <section className="px-4 sm:px-8 lg:px-16 pb-24 sm:pb-32">
-      {/* Crop black bars: top ~17%, right ~21% of original video frame.
-          Scale video to 126.6% width so 79% content fills 100% of container.
-          Shift top by -20.5% to hide the top black bar. */}
+      {/* Show only the simulation (left) panel of the video.
+          Scale to 185% wide so the ~54% sim side fills the full container width.
+          Shift up by -35% of container height to hide the top black bar. */}
       <div
         ref={ref}
-        className={`relative w-full rounded-lg overflow-hidden bg-card transition-all duration-700 ease-out ${
+        className={`relative w-full aspect-video rounded-lg overflow-hidden bg-card transition-all duration-700 ease-out ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
-        style={{ aspectRatio: "1.692" }}
       >
         <video
           src={heroVideo}
@@ -26,8 +25,8 @@ const VideoShowcase = () => {
           playsInline
           style={{
             position: "absolute",
-            width: "126.6%",
-            top: "-20.5%",
+            width: "185%",
+            top: "-35%",
             left: 0,
           }}
         />
