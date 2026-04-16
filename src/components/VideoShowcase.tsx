@@ -6,6 +6,7 @@ const VideoShowcase = () => {
   const { ref, isVisible } = useScrollReveal(0.95);
 
   return (
+<!-- 
     <section className="px-4 sm:px-8 lg:px-16 pb-24 sm:pb-32">
       {/* Show only the simulation (left) panel of the video.
           Scale to 205% wide so the sim side fills the container.
@@ -32,6 +33,7 @@ const VideoShowcase = () => {
         />
       </div>
     </section>
+  -->
   );
 };
 
