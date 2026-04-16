@@ -25,8 +25,8 @@ const VideoShowcase = () => {
           playsInline
           style={{
             position: "absolute",
-            width: "185%",
-            top: "-35%",
+            width: "205%",
+            top: "-55%",
             left: 0,
           }}
         />
