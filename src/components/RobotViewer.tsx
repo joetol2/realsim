@@ -5,7 +5,7 @@ import { useLoader } from "@react-three/fiber";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
 import { MeshStandardMaterial } from "three";
 
-function StlModel({ url }: { url: string }) {
+function StlModel({ url, scale }: { url: string; scale: number }) {
   const geometry = useLoader(STLLoader, url);
   const material = new MeshStandardMaterial({
     color: "#2563eb",
@@ -17,17 +17,17 @@ function StlModel({ url }: { url: string }) {
     <mesh
       geometry={geometry}
       material={material}
-      scale={0.008}
+      scale={scale}
       position={[0, 0.5, 0]}
       rotation={[-Math.PI / 2, 0, 0]}
     />
   );
 }
 
-function GltfModel({ url }: { url: string }) {
+function GltfModel({ url, scale }: { url: string; scale: number }) {
   const { scene } = useGLTF(url);
 
-  scene.scale.set(0.008, 0.008, 0.008);
+  scene.scale.set(scale, scale, scale);
   scene.position.set(0, 0.5, 0);
   scene.rotation.set(-Math.PI / 2, 0, 0);
 
@@ -42,18 +42,18 @@ function GltfModel({ url }: { url: string }) {
   return <primitive object={scene} />;
 }
 
-function Model({ url }: { url: string }) {
+function Model({ url, scale }: { url: string; scale: number }) {
   const ext = url.split(".").pop()?.toLowerCase();
-  return ext === "stl" ? <StlModel url={url} /> : <GltfModel url={url} />;
+  return ext === "stl" ? <StlModel url={url} scale={scale} /> : <GltfModel url={url} scale={scale} />;
 }
 
-function Scene({ modelUrl }: { modelUrl: string }) {
+function Scene({ modelUrl, scale }: { modelUrl: string; scale: number }) {
   return (
     <>
       <ambientLight intensity={0.4} />
       <directionalLight position={[5, 8, 5]} intensity={4} castShadow />
       <Suspense fallback={null}>
-        <Model url={modelUrl} />
+        <Model url={modelUrl} scale={scale} />
       </Suspense>
       <Grid
         position={[0, 0, 0]}
@@ -73,7 +73,7 @@ function Scene({ modelUrl }: { modelUrl: string }) {
   );
 }
 
-function ViewerCell({ modelUrl, label }: { modelUrl: string; label: string }) {
+function ViewerCell({ modelUrl, label, scale }: { modelUrl: string; label: string; scale: number }) {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (
@@ -88,7 +88,7 @@ function ViewerCell({ modelUrl, label }: { modelUrl: string; label: string }) {
           style={{ background: "rgb(10, 16, 30)" }}
         >
           <fog attach="fog" args={["#0a101e", 25, 50]} />
-          <Scene modelUrl={modelUrl} />
+          <Scene modelUrl={modelUrl} scale={scale} />
           <OrbitControls
             enableZoom={true}
             zoomSpeed={0.5}
@@ -116,9 +116,9 @@ function ViewerCell({ modelUrl, label }: { modelUrl: string; label: string }) {
 const BASE = import.meta.env.BASE_URL;
 
 const models = [
-  { url: `${BASE}models/tycho_decimated.stl`, label: "Tycho" },
-  { url: `${BASE}models/tycho.gltf`, label: "Tycho (glTF)" },
-  { url: `${BASE}models/rolli_assembly_05.stl`, label: "Rolli" },
+  { url: `${BASE}models/tycho_decimated.stl`, label: "Tycho", scale: 0.008 },
+  { url: `${BASE}models/tycho.gltf`, label: "Tycho (glTF)", scale: 0.8 },
+  { url: `${BASE}models/rolli_assembly_05.stl`, label: "Rolli", scale: 0.008 },
 ];
 
 export default function RobotViewer() {
@@ -133,7 +133,7 @@ export default function RobotViewer() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {models.map((m) => (
-            <ViewerCell key={m.label} modelUrl={m.url} label={m.label} />
+            <ViewerCell key={m.label} modelUrl={m.url} label={m.label} scale={m.scale} />
           ))}
         </div>
         <p className="text-sm text-muted-foreground mt-4">
