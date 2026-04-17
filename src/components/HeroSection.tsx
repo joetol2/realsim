@@ -4,7 +4,7 @@ const HeroSection = () => {
       {/* Nav */}
       <nav className="flex items-center justify-between px-8 sm:px-12 lg:px-20 pt-8 pb-4">
         <span className="text-sm font-heading tracking-[0.25em] uppercase text-foreground font-semibold">
-          RealSim
+          Sim2Real
         </span>
         <a
           href="mailto:hello@realsim.bot"
@@ -24,7 +24,7 @@ const HeroSection = () => {
           </div>
          
           <p className="animate-fade-up-delay-2 text-base sm:text-lg text-text-body leading-relaxed max-w-xl mx-auto">
-            RealSIM is focused on the gap between simulated training and
+            Sim2Real is focused on the gap between simulated training and
             real-world robot behavior. We're not ready to say more yet.
           </p>
         </div>

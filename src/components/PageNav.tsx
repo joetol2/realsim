@@ -6,7 +6,7 @@ const PageNav = () => (
       to="/"
       className="text-sm font-heading tracking-[0.25em] uppercase text-foreground font-semibold hover:opacity-70 transition-opacity"
     >
-      RealSim
+      Sim2Real
     </Link>
     <a
       href="mailto:hello@realsim.bot"

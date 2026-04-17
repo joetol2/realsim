@@ -16,7 +16,7 @@ const Footer = () => {
           to="/"
           className="text-xs font-heading tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
         >
-          RealSim
+          Sim2Real
         </Link>
         <nav className="flex items-center gap-6">
           <Link
