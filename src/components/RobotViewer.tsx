@@ -113,13 +113,12 @@ function ViewerCell({ modelUrl, label }: { modelUrl: string; label: string }) {
   );
 }
 
-const MODEL_URL = `${import.meta.env.BASE_URL}models/tycho_decimated.stl`;
+const BASE = import.meta.env.BASE_URL;
 
 const models = [
-  { url: MODEL_URL, label: "Model 01" },
-  { url: MODEL_URL, label: "Model 02" },
-  { url: MODEL_URL, label: "Model 03" },
-  { url: MODEL_URL, label: "Model 04" },
+  { url: `${BASE}models/tycho_decimated.stl`, label: "Tycho" },
+  { url: `${BASE}models/tycho.gltf`, label: "Tycho (glTF)" },
+  { url: `${BASE}models/rolli_assembly_05.stl`, label: "Rolli" },
 ];
 
 export default function RobotViewer() {
@@ -132,7 +131,7 @@ export default function RobotViewer() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-semibold tracking-tight leading-[1.15] mb-10">
           Interactive 3D models.
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {models.map((m) => (
             <ViewerCell key={m.label} modelUrl={m.url} label={m.label} />
           ))}
