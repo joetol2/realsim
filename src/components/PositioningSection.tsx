@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import tychoVideo from "@/assets/videos/tycho_jr_pit_in_cup.mp4";
+import danVideo from "@/assets/videos/sim4real_Dan_Video_resized_480.mov";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const PositioningSection = () => {
@@ -36,7 +36,7 @@ const PositioningSection = () => {
           >
             <video
               ref={videoRef}
-              src={tychoVideo}
+              src={danVideo}
               autoPlay
               loop
               muted
