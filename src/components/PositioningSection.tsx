@@ -1,8 +1,10 @@
-import ansysImage from "@/assets/ansys-fea.webp";
+import { useRef } from "react";
+import tychoVideo from "@/assets/videos/tycho_jr_pit_in_cup.mp4";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const PositioningSection = () => {
   const { ref, isVisible } = useScrollReveal();
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <section className="py-24 sm:py-32 border-t border-border" style={{ backgroundColor: '#012b62' }}>
@@ -27,12 +29,19 @@ const PositioningSection = () => {
             </p>
           </div>
 
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-            <img
-              src={ansysImage}
-              alt="Finite element analysis of a robotic structure"
+          <div
+            className="relative aspect-[4/3] rounded-lg overflow-hidden"
+            onMouseEnter={() => videoRef.current?.setAttribute('controls', '')}
+            onMouseLeave={() => videoRef.current?.removeAttribute('controls')}
+          >
+            <video
+              ref={videoRef}
+              src={tychoVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
-              loading="lazy"
             />
           </div>
         </div>
