@@ -71,6 +71,12 @@ const Footer = () => {
           >
             Models
           </Link>
+          <Link
+            to="/press"
+            className="text-xs font-heading tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
+          >
+            Press
+          </Link>
         </nav>
         <div className="flex items-center gap-4">
           <a href="#" aria-label="Instagram"><Instagram /></a>
