@@ -20,7 +20,7 @@ const HeroSection = () => {
         </span>
         <a
           href="mailto:hello@sim2real.bot"
-          className="text-xs font-heading tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
+          className="text-xs font-heading tracking-widest uppercase text-white hover:text-white/70 transition-colors duration-300"
         >
           Contact
         </a>
@@ -35,7 +35,7 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <p className="animate-fade-up-delay-2 text-lg sm:text-xl text-text-body leading-relaxed max-w-2xl mx-auto">
+          <p className="animate-fade-up-delay-2 text-lg sm:text-xl text-white leading-relaxed max-w-2xl mx-auto">
             Sim2Real is focused on the gap between simulated training and
             real-world robot behavior. We&#39;re not ready to say more yet.
           </p>
