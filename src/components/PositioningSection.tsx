@@ -5,32 +5,35 @@ const PositioningSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="py-24 sm:py-32 border-t border-border">
+    <section className="relative z-10 bg-background py-24 sm:py-32 border-t border-border">
       <div
         ref={ref}
         className={`max-w-6xl mx-auto px-8 sm:px-12 lg:px-20 transition-all duration-700 ease-out ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <p className="text-base font-heading tracking-[0.3em] uppercase text-muted-foreground mb-6">
+          The Challenge
+        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
-            <p className="text-base font-heading tracking-[0.3em] uppercase text-muted-foreground mb-6">
-              What we do
-            </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-semibold tracking-tight leading-[1.15] mb-6">
-              Bridging the gap between simulation and&nbsp;reality.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-semibold tracking-tight leading-[1.1] mb-8">
+              Simulation is not reality.
             </h2>
-            <p className="text-base text-text-body leading-relaxed">
-              Our work sits at the intersection of robotics, simulation, and
-              deployment, improving how robotic systems transfer from training
-              environments to the physical world.
+            <p className="text-base sm:text-lg text-text-body leading-relaxed mb-6">
+              Robots trained entirely in simulation often fail when deployed in the physical world.
+              Differences in physics, sensor noise, actuator response, and environmental variability
+              create a gap that costs time, money, and limits what&apos;s possible.
+            </p>
+            <p className="text-base sm:text-lg text-text-body leading-relaxed">
+              We&apos;re building tools to close that gap — making simulation a more reliable
+              foundation for real-world robotic performance.
             </p>
           </div>
-
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-card">
             <img
               src={ansysImage}
-              alt="Finite element analysis of a robotic structure"
+              alt="FEA simulation visualization"
               className="w-full h-full object-cover"
               loading="lazy"
             />
