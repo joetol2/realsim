@@ -28,14 +28,17 @@ function DemoCard({ eyebrow, title, description, video, reversed }: DemoProps) {
   );
 
   const videoBlock = (
-    <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-      <video
-        src={video}
-        controls
-        muted
-        playsInline
-        className="w-full h-full object-cover"
-      />
+    <div>
+      <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+        <video
+          src={video}
+          controls
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <p className="text-xs text-muted-foreground text-right mt-2">4x playback</p>
     </div>
   );
 
